@@ -67,7 +67,7 @@ body::-webkit-scrollbar {
 
 .cursor {
   position: fixed;
-  z-index: 100;
+  z-index: 9999;
   border: 3px solid #c1bbff;
   width: 35px;
   height: 35px;
