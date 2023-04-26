@@ -33,7 +33,7 @@ function mainText2 () {
   });
   $('.h4').css({
     opacity: 1,
-    width: '300px'
+    width: '350px'
   });
   setTimeout(mainTextOn, 1000);
 };
@@ -52,9 +52,34 @@ function mainTextOn () {
   $('.main-bg').css({
     bottom: '0',
   });
+  setTimeout(fullbg, 1000);
+};
+
+function fullbg () {
+  $('.full-bg').css({
+    width: '10px',
+    height: '10px',
+    borderRadius: '100px',
+    top: '45%'
+  });
+  $('.main-text').css({
+    animation: 'sponge 2s 1'
+  });
+  setTimeout(drag, 1000);
+};
+
+function drag () {
+  $('.section').off('scroll touchmove mousewheel');
 };
 
 $(document).ready(function(){
+  $('.section').on('scroll touchmove mousewheel', function(event) {
+    
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+    
+  });
   setTimeout(mainText, 1000);
 });
 
@@ -64,9 +89,12 @@ $('.main-text').hover(function(){
   $('.cursor').removeClass('main-text-on');
 });
 
-// $('#fullpage').fullpage();
-new fullpage('#fullpage', {
-  //options here
-  autoScrolling:true,
-  scrollHorizontally: true
+$(window).scroll(function(){
+  let wh = $(window).height();
+  console.log(wh);
+  if($(window).scrollTop() == wh) {
+    $('body').css({
+      backgroundColor: '#aaa'
+    });
+  };
 });
