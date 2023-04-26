@@ -275,7 +275,7 @@ body::-webkit-scrollbar {
   font-family: 'RixInooAriDuriR';
   font-size: 3rem;
   padding-bottom: 5px;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #c1bbff;
   transition: all 0.4s;
   opacity: 0;
 }
