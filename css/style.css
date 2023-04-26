@@ -36,7 +36,15 @@ body {
   width: 100%;
   height: 100%;
   cursor: none;
-  background-color: rgb(255, 250, 244);
+  background-color: rgb(255, 252, 249);
+  overflow-x: hidden;
+  transition: all 1s cubic-bezier(0.340, -0.600, 0.515, 1.570);
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* 크롬, 사파리, 오페라, 엣지 */
 }
 
 ::selection {
@@ -65,7 +73,7 @@ body {
   height: 35px;
   border-radius: 50px;
   pointer-events: none;
-  background-color: rgba(255, 250, 244, 0.6);
+  background-color: rgba(255, 252, 249, 0.6);
   animation: color 5s infinite;
 }
 
@@ -83,23 +91,130 @@ body {
 
 /* 메인 영역 */
 
-.main {
+#fullpage .main {
   position: relative;
-  left: calc(50% - 600px);
-  width: 1200px;
+  width: 100%;
   height: 100%;
   padding-top: 30px;
 }
 
-.main > p {
+.main-bg {
+  position: absolute;
+  bottom: -250px;
+  width: 100%;
+  height: 250px;
+  transition: all 2s;
+  overflow: hidden;
+}
+
+.main-bg img {
+  position: absolute;
+}
+
+.w1 {
+  bottom: -15px;
+  z-index: 100;
+  width: 150%;
+  animation: w1 17s infinite;
+}
+
+.w2 {
+  bottom: 20px;
+  left: -20px;
+  z-index: 50;
+  width: 110%;
+  animation: w2 10s infinite;
+}
+
+.w3 {
+  bottom: 20px;
+  left: -40px;
+  z-index: 30;
+  width: 170%;
+  animation: w3 20s infinite;
+}
+
+.w4 {
+  bottom: 30px;
+  left: -10px;
+  width: 200%;
+  animation: w4 25s infinite;
+}
+
+@keyframes w1 {
+  0% {
+    left: 0;
+    bottom: -15px;
+  }
+  30% {
+    bottom: -10px;
+  }
+  50% {
+    left: -50%;
+    bottom: -15px;
+  }
+  60% {
+    bottom: -10px;
+  }
+  100% {
+    left: 0;
+    bottom: -15px;
+  }
+}
+
+@keyframes w2 {
+  0% {
+    left: 0;
+    bottom: 20px;
+  }
+  50% {
+    left: -10%;
+    bottom: 25px;
+  }
+  100% {
+    left: 0;
+    bottom: 20px;
+  }
+}
+
+@keyframes w3 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -70%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes w4 {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.hy {
+  position: fixed;
+  top: 50px;
+  left: calc(50% - 900px);
   font-family: 'Middleschool_student';
   font-size: 2rem;
   color: #333;
+  text-align: center;
+  padding-right: 900px;
 }
 
-.main > h4 {
+.h4 {
   position: absolute;
-  top: 50%;
+  top: calc(50% - 90px);
   left: calc(50% - 420px);
   width: 0;
   height: 20px;
@@ -110,12 +225,12 @@ body {
   transform: rotateZ(-90deg);
   overflow: hidden;
   white-space: nowrap;
-  transition: all 0.6s;
+  transition: all 1s;
 }
 
 .main-text {
-  position: relative;
-  top: calc(50% - 180px);
+  position: fixed;
+  top: 250px;
   left: calc(50% - 250px);
   width: 10px;
   height: 0px;
@@ -125,13 +240,14 @@ body {
   line-height: 1.5;
   border: 4px solid transparent;
   border-radius: 10px;
-  background-image: linear-gradient(rgb(255, 250, 244),rgb(255, 250, 244)), 
+  background-image: linear-gradient(rgb(255, 252, 249), rgb(255, 252, 249)),
   linear-gradient(-120deg, #d68cec 20%, #c1bbff 50%, #6bd1f0);
   background-origin: border-box;
   background-clip: content-box, border-box;
   font-family: 'Middleschool_student';
   overflow: hidden;
-  transition: all 0.6s;
+  transition: all 1s;
+  background-attachment: fixed;
 }
 
 .main-text:hover span {
@@ -140,11 +256,13 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.main-text h2 {
-  margin-top: 50px;
+.main-text .h2 {
+  margin-top: 70px;
   font-size: 2rem;
   color: #333;
   letter-spacing: 3px;
+  opacity: 0;
+    transition: all 1s;
 }
 
 .main-text span {
@@ -159,6 +277,7 @@ body {
   padding-bottom: 5px;
   border-bottom: 2px solid #ddd;
   transition: all 0.4s;
+  opacity: 0;
 }
 
 .main-text p {
@@ -166,4 +285,12 @@ body {
   color: #666;
   font-size: 1.6rem;
   margin-top: 20px;
+  opacity: 0;
+    transition: all 0.4s;
+}
+
+.profile-wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
 }

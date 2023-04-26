@@ -24,20 +24,38 @@ function mainText () {
   $('.main-text').css({
     width: '500px'
   });
-  setTimeout(mainText2, 600);
+  setTimeout(mainText2, 1000);
 };
 
 function mainText2 () {
   $('.main-text').css({
     height: '300px'
   });
-  $('.main > h4').css({
+  $('.h4').css({
+    opacity: 1,
     width: '300px'
   });
-}
+  setTimeout(mainTextOn, 1000);
+};
+
+function mainTextOn () {
+  $('.main-text span').css({
+    opacity: 1
+  });
+  $('.main-text p').css({
+    opacity: 1
+  });
+  $('.h2').css({
+    opacity: 1,
+    marginTop: '50px'
+  });
+  $('.main-bg').css({
+    bottom: '0',
+  });
+};
 
 $(document).ready(function(){
-  setTimeout(mainText, 600);
+  setTimeout(mainText, 1000);
 });
 
 $('.main-text').hover(function(){
@@ -46,11 +64,9 @@ $('.main-text').hover(function(){
   $('.cursor').removeClass('main-text-on');
 });
 
-
-
-// 스크롤 이벤트
-
-$(window).scroll(function(){
-  let sv = window.scrollY;    //세로 스크롤 값을 value 함수에 저장한다.
-  console.log(sv);
-})
+// $('#fullpage').fullpage();
+new fullpage('#fullpage', {
+  //options here
+  autoScrolling:true,
+  scrollHorizontally: true
+});
