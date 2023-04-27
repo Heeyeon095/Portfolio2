@@ -100,20 +100,11 @@ $('.main-text').hover(function(){
 // scroll events
 
 let wh = $(window).height();
-let wh2 = wh * 2;
 
 
 $(window).resize(function() {
   wh = $(window).height();
-  wh2 = wh * 2;
 });
-
-let mh1 = 100;
-let mh2 = 200;
-let mh3 = 300;
-let mh4 = 400;
-let mh5 = 500;
-let mh6 = 600;
 
 function c1 () {
   $('.c1').addClass('show');
@@ -135,24 +126,24 @@ function c4 () {
 $(document.body).scroll(function(){
   let bt = $(document.body).scrollTop();
 
-  if($(this).scrollTop() > wh - mh2) {
+  if($(this).scrollTop() > wh - 300) {
     $('.profile-img').addClass('show');
     $('.profile').addClass('show');
-  } else if($(this).scrollTop() < wh - mh2) {
+  } else if($(this).scrollTop() < wh - 300) {
     $('.profile-img').removeClass('show');
     $('.profile').removeClass('show');
   };
-  if($(this).scrollTop() > wh - mh4) {
+  if($(this).scrollTop() > wh - 400) {
     $('.profile-title').addClass('show');
-  } else if($(this).scrollTop() < wh - mh4) {
+  } else if($(this).scrollTop() < wh - 400) {
     $('.profile-title').removeClass('show');
   };
-  if($(this).scrollTop() > wh2 - mh4) {
+  if($(this).scrollTop() > wh + 500) {
     setTimeout(c1, 100);
     setTimeout(c2, 200);
     setTimeout(c3, 300);
     setTimeout(c4, 400);
-  } else if($(this).scrollTop() < wh2 - mh4) {
+  } else if($(this).scrollTop() < wh + 500) {
     $('.check').removeClass('show');
   };
 });
