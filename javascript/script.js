@@ -139,11 +139,31 @@ $(document.body).scroll(function(){
     $('.profile-title').removeClass('show');
   };
   if($(this).scrollTop() > wh + 500) {
-    setTimeout(c1, 100);
-    setTimeout(c2, 200);
-    setTimeout(c3, 300);
-    setTimeout(c4, 400);
+    setTimeout(c1, 0);
+    setTimeout(c2, 100);
+    setTimeout(c3, 200);
+    setTimeout(c4, 300);
   } else if($(this).scrollTop() < wh + 500) {
     $('.check').removeClass('show');
+  };
+  if($(this).scrollTop() > wh + 900) {
+    $('.skill-title').addClass('show');
+  } else {
+    $('.skill-title').removeClass('show');
+  };
+  if($(this).scrollTop() > wh + 1200) {
+    $('.skill-tool').addClass('show');
+  } else {
+    $('.skill-tool').removeClass('show');
+  };
+  if($(this).scrollTop() > wh + 1500) {
+    $('.skill-language').addClass('show');
+  } else {
+    $('.skill-language').removeClass('show');
+  };
+  if($(this).scrollTop() > wh + 1800) {
+    $('.skill-learning').addClass('show');
+  } else {
+    $('.skill-learning').removeClass('show');
   };
 });
