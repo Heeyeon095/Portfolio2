@@ -360,7 +360,7 @@ body {
 
 .profile-img {
   position: relative;
-  top: calc(50% - 200px);
+  top: calc(50% - 250px);
   left: 0;
   width: 400px;
   height: 400px;
