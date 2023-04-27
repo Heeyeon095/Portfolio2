@@ -6,7 +6,11 @@ document.addEventListener('mousemove', (e) => {
     cursor.style.top = e.pageY - 20 + 'px';
 });
 
-$('.main-text').hover(function(){
+$('a').hover(function(){
+  $(this).css({
+    animation: 'acolor 3s infinite',
+    fontWeight: 'blod'
+  });
   $('.cursor').css({
     width: '50px',
     height: '50px'
@@ -15,6 +19,10 @@ $('.main-text').hover(function(){
   $('.cursor').css({
     width: '35px',
     height: '35px'
+  });
+  $(this).css({
+    animation: 'acolor 3s 0',
+    fontWeight: '100'
   });
 });
 
@@ -47,7 +55,7 @@ function mainTextOn () {
   });
   $('.h2').css({
     opacity: 1,
-    marginTop: '50px'
+    marginTop: '70px'
   });
   $('.main-bg').css({
     bottom: '0',
@@ -60,7 +68,7 @@ function fullbg () {
     width: '10px',
     height: '10px',
     borderRadius: '100px',
-    top: '45%'
+    top: '40%'
   });
   $('.main-text').css({
     animation: 'sponge 2s 1'
@@ -89,12 +97,62 @@ $('.main-text').hover(function(){
   $('.cursor').removeClass('main-text-on');
 });
 
-$(window).scroll(function(){
-  let wh = $(window).height();
-  console.log(wh);
-  if($(window).scrollTop() == wh) {
-    $('body').css({
-      backgroundColor: '#aaa'
-    });
+// scroll events
+
+let wh = $(window).height();
+let wh2 = wh * 2;
+
+
+$(window).resize(function() {
+  wh = $(window).height();
+  wh2 = wh * 2;
+});
+
+let mh1 = 100;
+let mh2 = 200;
+let mh3 = 300;
+let mh4 = 400;
+let mh5 = 500;
+let mh6 = 600;
+
+function c1 () {
+  $('.c1').addClass('show');
+}
+
+function c2 () {
+  $('.c2').addClass('show');
+}
+
+function c3 () {
+  $('.c3').addClass('show');
+}
+
+function c4 () {
+  $('.c4').addClass('show');
+}
+
+
+$(document.body).scroll(function(){
+  let bt = $(document.body).scrollTop();
+
+  if($(this).scrollTop() > wh - mh2) {
+    $('.profile-img').addClass('show');
+    $('.profile').addClass('show');
+  } else if($(this).scrollTop() < wh - mh2) {
+    $('.profile-img').removeClass('show');
+    $('.profile').removeClass('show');
+  };
+  if($(this).scrollTop() > wh - mh4) {
+    $('.profile-title').addClass('show');
+  } else if($(this).scrollTop() < wh - mh4) {
+    $('.profile-title').removeClass('show');
+  };
+  if($(this).scrollTop() > wh2 - mh4) {
+    setTimeout(c1, 100);
+    setTimeout(c2, 200);
+    setTimeout(c3, 300);
+    setTimeout(c4, 400);
+  } else if($(this).scrollTop() < wh2 - mh4) {
+    $('.check').removeClass('show');
   };
 });
