@@ -28,20 +28,19 @@ $('a').hover(function(){
 
 // 메인
 
-function mainText () {
-  $('.main-text').css({
-    width: '500px'
-  });
-  setTimeout(mainText2, 1000);
-};
-
 function mainText2 () {
   $('.main-text').css({
-    height: '300px'
+    height: '450px',
+    width: '450px',
+    padding: '35px 0'
   });
   $('.h4').css({
     opacity: 1,
     width: '350px'
+  });
+  $('.hy').css({
+    opacity: 1,
+    width: '1000px'
   });
   setTimeout(mainTextOn, 1000);
 };
@@ -55,23 +54,10 @@ function mainTextOn () {
   });
   $('.h2').css({
     opacity: 1,
-    marginTop: '70px'
+    marginTop: '100px'
   });
   $('.main-bg').css({
     bottom: '0',
-  });
-  setTimeout(fullbg, 1000);
-};
-
-function fullbg () {
-  $('.full-bg').css({
-    width: '10px',
-    height: '10px',
-    borderRadius: '100px',
-    top: '40%'
-  });
-  $('.main-text').css({
-    animation: 'sponge 2s 1'
   });
   setTimeout(drag, 1000);
 };
@@ -88,7 +74,7 @@ $(document).ready(function(){
     return false;
     
   });
-  setTimeout(mainText, 1000);
+  setTimeout(mainText2, 1000);
 });
 
 $('.main-text').hover(function(){

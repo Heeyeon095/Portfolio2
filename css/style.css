@@ -121,17 +121,6 @@ body {
   padding-top: 100px;
 }
 
-.full-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  background-color: rgb(236, 245, 245);
-  transition: all 2s;
-}
-
 .main-bg {
   position: relative;
   bottom: -300px;
@@ -237,27 +226,31 @@ body {
 
 .hy {
   position: fixed;
-  top: 50px;
-  left: calc(50% - 900px);
+  top: 60px;
+  left: 50px;
+  width: 0px;
   font-family: 'omyu_pretty';
   font-size: 1.8rem;
   color: #333;
   text-align: center;
   padding-right: 900px;
   z-index: 9000;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 0.4s;
 }
 
 .h4 {
   position: fixed;
-  top: calc(50% - 100px);
-  left: calc(50% - 485px);
+  top: 100px;
+  left: 50px;
   width: 0;
   height: 30px;
+  z-index: 9000;
   font-family: 'omyu_pretty';
   color: #999;
   font-size: 1.1rem;
   letter-spacing: 1px;
-  transform: rotateZ(-90deg);
   overflow: hidden;
   white-space: nowrap;
   transition: all 1s;
@@ -265,10 +258,10 @@ body {
 
 .main-text {
   position: fixed;
-  top: calc(50% - 220px);
+  top: calc(50% - 350px);
   left: calc(50% - 250px);
-  width: 10px;
-  height: 0px;
+  width: 500px;
+  height: 0;
   color: #333;
   text-align: center;
   line-height: 1.2;
@@ -279,10 +272,10 @@ body {
   background-origin: border-box;
   background-clip: content-box, border-box;
   font-family: 'omyu_pretty';
-  overflow: hidden;
   transition: all 1s;
-  background-attachment: fixed;
   transform: scale(1.2);
+  border-radius: 500px;
+  padding: 0;
 }
 
 @keyframes sponge {
@@ -293,7 +286,7 @@ body {
     transform: scale(1.23);
   }
   45% {
-    transform: scale(1);
+    transform: scale(1.15);
   }
   75% {
     transform: scale(1.23);
@@ -310,7 +303,7 @@ body {
 }
 
 .main-text .h2 {
-  margin-top: 90px;
+  margin-top: 150px;
   font-size: 1.4rem;
   color: #333;
   letter-spacing: 3px;
@@ -337,8 +330,8 @@ body {
 .main-text p {
   text-align: center;
   color: #666;
-  font-size: 1.2rem;
-  margin-top: 20px;
+  font-size: 1.1rem;
+  margin-top: 30px;
   opacity: 0;
   transition: all 0.6s;
 }
@@ -578,7 +571,7 @@ body {
   position: relative;
   width: 100%;
   background-color: #fff;
-  padding-bottom: 200px;
+  padding-bottom: 150px;
 }
 
 .skill-title {
@@ -593,7 +586,7 @@ body {
 
 .skill-title.show {
   opacity: 1;
-  top: 120px;
+  top: 150px;
 }
 
 .skill-title > p {
@@ -614,7 +607,7 @@ body {
   left: calc(50% - 600px);
   width: 1200px;
   font-family: 'omyu_pretty';
-  padding-bottom: 200px;
+  padding-bottom: 150px;
 }
 
 .skill-contents > div {
