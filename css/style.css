@@ -88,7 +88,6 @@ body {
 .cursor {
   position: fixed;
   z-index: 9999;
-  border: 3px solid #c1bbff;
   width: 35px;
   height: 35px;
   border-radius: 50px;
