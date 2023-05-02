@@ -153,3 +153,101 @@ $(document.body).scroll(function(){
     $('.skill-learning').removeClass('show');
   };
 });
+
+// portfolio slide
+
+let pf = 0;
+
+$('.portfolio-prev > i').click(function(){
+  console.log(pf);
+  if(pf == 0) {
+
+  } else if(pf == 1) {
+    $(this).css({
+      backgroundColor: 'rgba(0,0,0,0.05)'
+    });
+    $('.portfolio-con').css({
+      left: 'calc(50% - 330px)'
+    });
+    $('.portfolio').removeClass('on');
+    $('.portfolio').eq(pf-1).addClass('on');
+    pf--;
+  } else if(pf == 2) {
+      $('.portfolio-con').css({
+        left: 'calc(50% + -960px)'
+      });
+      $('.portfolio').removeClass('on');
+      $('.portfolio').eq(pf-1).addClass('on');
+    pf--;
+  } else if(pf == 4) {
+    $('.portfolio-next > i').css({
+      backgroundColor: 'rgba(0,0,0,0.2)'
+    });
+    $('.portfolio-con').css({
+      left: 'calc(50% + -2225px)'
+    });
+    $('.portfolio').removeClass('on');
+    $('.portfolio').eq(pf-1).addClass('on');
+    pf--;
+  } else if(pf == 3) {
+    $('.portfolio-con').css({
+      left: 'calc(50% + -1590px)'
+    });
+    $('.portfolio').removeClass('on');
+    $('.portfolio').eq(pf-1).addClass('on');
+    pf--;
+  } 
+});
+
+$('.portfolio-next > i').click(function(){
+    if(pf == 0) {
+      $('.portfolio-prev > i').css({
+        backgroundColor: 'rgba(0,0,0,0.2)'
+      });
+      $('.portfolio-con').css({
+        left: 'calc(50% + -960px)'
+      });
+      $('.portfolio').eq(pf).removeClass('on');
+      $('.portfolio').eq(pf+1).addClass('on');
+      pf++;
+    } else if(pf == 1) {
+      $('.portfolio').removeClass('on');
+      $('.portfolio').eq(pf+1).addClass('on');
+      $('.portfolio-con').css({
+        left: 'calc(50% + -1590px)'
+      });
+      pf++;
+    } else if(pf == 2) {
+      $('.portfolio').removeClass('on');
+      $('.portfolio').eq(pf+1).addClass('on');
+      $('.portfolio-con').css({
+        left: 'calc(50% + -2225px)'
+      });
+      pf++;
+    } else if(pf == 3) {
+      $('.portfolio').removeClass('on');
+      $('.portfolio').eq(pf+1).addClass('on');
+      $('.portfolio-con').css({
+        left: 'calc(50% + -2850px)'
+      });
+      $(this).css({
+        backgroundColor: 'rgba(0,0,0,0.05)'
+      });
+      pf++;
+    } else if(pf == 4) {}
+  });
+
+  // need <menu>
+  
+  let curr = 0;
+
+function oslide() {
+  i = curr % 4;
+
+  curr++;
+  
+  $(".need-text").removeClass('on');
+  $(".need-text").eq(i).addClass('on');
+}
+
+setInterval(() => oslide(), 4000);
