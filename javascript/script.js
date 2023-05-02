@@ -59,6 +59,9 @@ function mainTextOn () {
   $('.main-bg').css({
     bottom: '0',
   });
+  $('.scroll > i').css({
+    opacity: 1
+  });
   setTimeout(drag, 1000);
 };
 
